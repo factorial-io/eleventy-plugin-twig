@@ -1,5 +1,5 @@
 {
-  "name": "eleventy-plugin-twig",
+  "name": "@factorial/eleventy-plugin-twig",
   "description": "Twig templating engine for eleventy",
   "version": "0.1.0",
   "main": "index.js",
