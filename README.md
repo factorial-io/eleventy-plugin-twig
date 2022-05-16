@@ -50,7 +50,7 @@ module.exports = function(eleventyConfig) {
 }
 ```
 
-As mentioned in the `eleventyConfig.addPlugin(eleventy-plugin-twig, TWIG_OPTIONS)` some options have to be defined. Currently `@factorial/eleventy-plugin-twig` provides the following configuration object:
+As mentioned in the `eleventyConfig.addPlugin(eleventy-plugin-twig, TWIG_OPTIONS)` some options can be defined **optionally**. Currently `@factorial/eleventy-plugin-twig` provides the following configuration object:
 
 ```js
 /**
