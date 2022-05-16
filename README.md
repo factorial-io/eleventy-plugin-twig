@@ -21,16 +21,16 @@ This package adds a `.twig` template engine to Eleventy that lets you use the pu
 
 ## Getting Started
 
-Download the latest `eleventy-plugin-twig` release from github: https://github.com/factorial-io/eleventy-plugin-twig and link ([yarn link](https://classic.yarnpkg.com/lang/en/docs/cli/link/) or [npm link](http://npm.github.io/publishing-pkgs-docs/publishing/the-npm-link-command.html)) that to your project or simply install as a `node_module`:
+Install the latest `@factorial/eleventy-plugin-twig` release as a `node_module` with `yarn`:
 
 ```shellsession
-$ yarn add -dev eleventy-plugin-twig
+$ yarn add --dev @factorial/eleventy-plugin-twig
 ```
 
-or
+or `npm`:
 
 ```shellsession
-$ npm install --save-dev eleventy-plugin-twig
+$ npm install --save-dev @factorial/eleventy-plugin-twig
 ```
 
 ## Usage
@@ -38,7 +38,7 @@ $ npm install --save-dev eleventy-plugin-twig
 For Eleventy to recognize this you have to register this as a plugin and set the templating format as well. To do so modify the `.eleventy.js` config file:
 
 ```js
-const eleventy-plugin-twig = require("eleventy-plugin-twig");
+const eleventy-plugin-twig = require("@factorial/eleventy-plugin-twig");
 
 module.exports = function(eleventyConfig) {
   ...
@@ -48,7 +48,7 @@ module.exports = function(eleventyConfig) {
 }
 ```
 
-As mentioned in the `eleventyConfig.addPlugin(eleventy-plugin-twig, TWIG_OPTIONS)` some options have to be defined. Currently `eleventy-plugin-twig` provides the following configuration object:
+As mentioned in the `eleventyConfig.addPlugin(eleventy-plugin-twig, TWIG_OPTIONS)` some options have to be defined. Currently `@factorial/eleventy-plugin-twig` provides the following configuration object:
 
 ```js
 /**
@@ -68,7 +68,7 @@ You could use this as a starting point and customize to your individual needs:
 
 ```js
 /*
- * @typedef {import("eleventy-plugin-twig").TWIG_OPTIONS} TWIG_OPTIONS
+ * @typedef {import("@factorial/eleventy-plugin-twig").TWIG_OPTIONS} TWIG_OPTIONS
  * @type {TWIG_OPTIONS}
  */
 const TWIG_OPTIONS = {
