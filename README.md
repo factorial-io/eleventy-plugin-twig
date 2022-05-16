@@ -35,7 +35,7 @@ $ npm install --save-dev @factorial/eleventy-plugin-twig
 
 ## Usage
 
-For Eleventy to recognize this you have to **register this as a plugin**, set the **templating format** and update the **watchTargets** as well. To do so modify the `.eleventy.js` config file:
+For Eleventy to recognize this you have to **register this as a plugin** and update the **watchTargets** as well. To do so modify the `.eleventy.js` config file:
 
 ```js
 const eleventyPluginTwig = require("@factorial/eleventy-plugin-twig");
@@ -44,7 +44,6 @@ const srcFolderToWatch = "src/**/*.{css,js,twig}";
 module.exports = function(eleventyConfig) {
   ...
   eleventyConfig.addPlugin(eleventyPluginTwig, TWIG_OPTIONS);
-  eleventyConfig.setTemplateFormats(["twig"]);
   eleventyConfig.addWatchTarget(srcFolderToWatch);
   ...
 }
