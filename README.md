@@ -38,11 +38,11 @@ $ npm install --save-dev @factorial/eleventy-plugin-twig
 For Eleventy to recognize this you have to register this as a plugin and set the templating format as well. To do so modify the `.eleventy.js` config file:
 
 ```js
-const eleventy-plugin-twig = require("@factorial/eleventy-plugin-twig");
+const eleventyPluginTwig = require("@factorial/eleventy-plugin-twig");
 
 module.exports = function(eleventyConfig) {
   ...
-  eleventyConfig.addPlugin(eleventy-plugin-twig, TWIG_OPTIONS);
+  eleventyConfig.addPlugin(eleventyPluginTwig, TWIG_OPTIONS);
   eleventyConfig.setTemplateFormats(["twig"]);
   ...
 }
