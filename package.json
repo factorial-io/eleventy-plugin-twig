@@ -26,7 +26,6 @@
   "homepage": "https://github.com/factorial-io/eleventy-plugin-twig#readme",
   "devDependencies": {
     "@11ty/eleventy-utils": "^1.0.1",
-    "@types/jest": "^27.5.0",
     "debug": "^4.3.4",
     "eslint": "^8.14.0",
     "eslint-config-airbnb-base": "^15.0.0",
