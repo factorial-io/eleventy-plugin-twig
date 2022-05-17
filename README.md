@@ -23,14 +23,14 @@ This package adds a `.twig` template engine to Eleventy that lets you use the pu
 
 Install the latest `@factorial/eleventy-plugin-twig` release as a `node_module` with `yarn`:
 
-```shellsession
-$ yarn add --dev @factorial/eleventy-plugin-twig
+```sh
+yarn add --dev @factorial/eleventy-plugin-twig
 ```
 
 or `npm`:
 
-```shellsession
-$ npm install --save-dev @factorial/eleventy-plugin-twig
+```sh
+npm install --save-dev @factorial/eleventy-plugin-twig
 ```
 
 ## Usage
