@@ -24,7 +24,7 @@
     "url": "https://github.com/factorial-io/eleventy-plugin-twig/issues"
   },
   "homepage": "https://github.com/factorial-io/eleventy-plugin-twig#readme",
-  "dependencies": {
+  "devDependencies": {
     "@11ty/eleventy-utils": "^1.0.1",
     "debug": "^4.3.4",
     "eslint": "^8.14.0",
