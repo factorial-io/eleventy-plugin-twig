@@ -1,17 +1,17 @@
 # [Eleventy](https://www.11ty.dev) + [Twig.js](https://github.com/twigjs/twig.js/)
 
 <p style="font-size: 2rem">
-<img 
-  style="margin:2rem; width:8rem; height:8rem;" 
-  align="center" 
-  width="128" 
+<img
+  style="margin:2rem; width:8rem; height:8rem;"
+  align="center"
+  width="128"
   height="128"
   alt="11ty Logo"
   src="https://camo.githubusercontent.com/124e337fb005b0e70eb3758b431b051eaf5419b3a709062fbcce6d661a6ea116/68747470733a2f2f7777772e313174792e6465762f696d672f6c6f676f2d6769746875622e737667">+
-<img 
-  style="margin:2rem; width:8rem; height:8rem;" 
-  align="center" 
-  width="128" 
+<img
+  style="margin:2rem; width:8rem; height:8rem;"
+  align="center"
+  width="128"
   height="128"
   alt="Twig.js Logo"
   src="https://user-images.githubusercontent.com/3282350/29336704-ab1be05c-81dc-11e7-92e5-cf11cca7b344.png">
@@ -21,16 +21,16 @@ This package adds a `.twig` template engine to Eleventy that lets you use the pu
 
 ## Getting Started
 
-Install the latest `@factorial/eleventy-plugin-twig` release as a `node_module` with `yarn`:
+Install the latest `@factorial/eleventy-plugin-twig` release as well as `twig` as node modules with `yarn`:
 
-```shellsession
-$ yarn add --dev @factorial/eleventy-plugin-twig
+```sh
+yarn add --dev @factorial/eleventy-plugin-twig twig
 ```
 
 or `npm`:
 
-```shellsession
-$ npm install --save-dev @factorial/eleventy-plugin-twig
+```sh
+npm install --save-dev @factorial/eleventy-plugin-twig twig
 ```
 
 ## Usage
