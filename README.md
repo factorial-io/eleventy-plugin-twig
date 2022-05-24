@@ -35,30 +35,43 @@ npm install --save-dev @factorial/eleventy-plugin-twig twig
 
 ## Usage
 
-For Eleventy to recognize this you have to **register this as a plugin** and update the **watchTargets** as well. To do so modify the `.eleventy.js` config file:
+For Eleventy to recognize this you have to **register this as a plugin**. To do so modify the `.eleventy.js` config file:
 
 ```js
 const eleventyPluginTwig = require("@factorial/eleventy-plugin-twig");
-const srcFolderToWatch = "src/**/*.{css,js,twig}";
 
 module.exports = function(eleventyConfig) {
   ...
-  eleventyConfig.addPlugin(eleventyPluginTwig, TWIG_OPTIONS);
-  eleventyConfig.addWatchTarget(srcFolderToWatch);
+  eleventyConfig.addPlugin(eleventyPluginTwig, USER_OPTIONS);
   ...
 }
 ```
 
-As mentioned in the `eleventyConfig.addPlugin(eleventy-plugin-twig, TWIG_OPTIONS)` some options can be defined **optionally**. Currently `@factorial/eleventy-plugin-twig` provides the following configuration object:
+As mentioned in the `eleventyConfig.addPlugin(eleventy-plugin-twig, USER_OPTIONS)` some options can be defined **optionally**. Currently `@factorial/eleventy-plugin-twig` provides the following configuration object:
 
 ```js
 /**
- * @typedef {Object} TWIG_OPTIONS
- * @property {object[]} [shortcodes]
- * @property {string} shortcodes[].symbol
- * @property {function():string} shortcodes[].callback
- * @property {Object.<string, string>} [namespaces]
- * @property {boolean} [cache]
+ * @typedef {object} ELEVENTY_DIRECTORIES
+ * @property {string} input
+ * @property {string} output
+ * @property {string} [includes]
+ * @property {string} [layouts]
+ * @property {string} [watch]
+ */
+
+/**
+ * @typedef {object} ASSETS_PATH
+ * @property {string} base
+ * @property {string} css
+ * @property {string} js
+ */
+
+/**
+ * @typedef {object} USER_OPTIONS
+ * @property {string} mixManifest,
+ * @property {ASSETS_PATH} [assetsPath]
+ * @property {ELEVENTY_DIRECTORIES} dir
+ * @property {import("@factorial/eleventy-plugin-twig").TWIG_OPTIONS} [twig]
  */
 ```
 
@@ -68,23 +81,30 @@ As mentioned in the `eleventyConfig.addPlugin(eleventy-plugin-twig, TWIG_OPTIONS
 You could use this as a starting point and customize to your individual needs:
 
 ```js
-/*
- * @typedef {import("@factorial/eleventy-plugin-twig").TWIG_OPTIONS} TWIG_OPTIONS
- * @type {TWIG_OPTIONS}
+/**
+ * @type {USER_OPTIONS} USER_OPTIONS
  */
-const TWIG_OPTIONS = {
-  shortcodes: [
-    {
-      symbol: "asset_path",
-      callback: () => "build/assets/",
+const USER_OPTIONS = {
+  twig: {
+    shortcodes: [],
+    namespaces: {
+      elements: "src/include/elements",
+      patterns: "src/include/patterns",
+      "template-components": "src/include/template-components",
+      templates: "src/include/templates",
     },
-  ],
-  cache: false,
-  namespaces: {
-    elements: "src/include/elements",
-    patterns: "src/include/patterns",
-    "template-components": "src/include/template-components",
-    templates: "src/include/templates",
+  },
+  mixManifest: "mix-manifest.json",
+  assetsPath: {
+    base: "assets",
+    css: "css",
+    js: "js",
+  },
+  dir: {
+    input: "src/include/templates",
+    output: "build",
+    layouts: "src/layouts",
+    watch: "src/**/*.{css,js,twig}",
   },
 };
 ```
