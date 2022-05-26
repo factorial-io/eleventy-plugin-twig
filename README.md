@@ -19,6 +19,13 @@
 
 This package adds a `.twig` template engine to Eleventy that lets you use the pure JavaScript implementation of the [Twig PHP templating language ](http://twig.sensiolabs.org/) called [Twig.js](https://github.com/twigjs/twig.js/).
 
+## Features
+
+- **Built-in Shortcodes**: Uses [`twig.extendFunction()`](https://twig.symfony.com/doc/2.x/advanced.html) to extend Twig
+- **Twig Namespaces**: Uses `Twig` built-in loaders to provide [namespaces](https://twig.symfony.com/doc/3.x/api.html#built-in-loaders)
+- **Responsive Images**: Uses [`@11ty/eleventy-twig`](https://github.com/11ty/eleventy-img) plugin to autogenerate responsive images
+- **Hashed Assets**: If you have generated a manifest (e.g. with [`@factorial/eleventy-plugin-fstack`](https://github.com/factorial-io/eleventy-plugin-fstack)) you could let eleventy replace unhashed assets like `css/js` automatically with their hashed versions
+
 ## Getting Started
 
 Install the latest `@factorial/eleventy-plugin-twig` release as well as `twig` as node modules with `yarn`:
@@ -60,17 +67,25 @@ As mentioned in the `eleventyConfig.addPlugin(eleventy-plugin-twig, USER_OPTIONS
  */
 
 /**
- * @typedef {object} ASSETS_PATH
- * @property {string} base - base path for assets like assets/ relative to the build folder
- * @property {string} css - path to the css folder relative to the base
- * @property {string} js - path to the js folder relative to the base
+ * @typedef {object} ASSETS
+ * @property {string} root - path to the root folder from projects root (e.g. src)
+ * @property {string} base - base path for assets relative to the root folder (e.g. assets)
+ * @property {string} css - path to the css folder relative to the base (e.g. css)
+ * @property {string} js - path to the js folder relative to the base (e.g. js)
+ * @property {string} images - path to the image folder relative to the base (e.g. images)
+ */
+
+/**
+ * @typedef {object} IMAGES
+ * @property {Array<number>} widths - those image sizes will be autogenereated / aspect-ratio will be respected
+ * @property {Array<import("@11ty/eleventy-img").ImageFormatWithAliases>} formats - jpeg/avif/webp/png/gif
+ * @property {string} additionalAttributes - those attributes will be added to the image element
  */
 
 /**
  * @typedef {object} SHORTCODE
  * @property {string} symbol - method name for twig to register
  * @property {function(import("@11ty/eleventy").UserConfig, USER_OPTIONS, ...* ):any} callback - callback which is called by twig
- * @property {Array<string>} [requiredOptions] - options that MUST be set in the USER_OPTIONS to make that shortcode work
  */
 
 /**
@@ -83,14 +98,12 @@ As mentioned in the `eleventyConfig.addPlugin(eleventy-plugin-twig, USER_OPTIONS
 /**
  * @typedef {object} USER_OPTIONS
  * @property {string} mixManifest - path to the mixManifest file relative to the build folder
- * @property {ASSETS_PATH} [assetsPath] - where to find all the assets relative to the build folder
+ * @property {ASSETS} [assets] - where to find all the assets relative to the build folder
+ * @property {IMAGES} [images] - options for 11tys image processing
  * @property {ELEVENTY_DIRECTORIES} dir - 11ty folder decisions
  * @property {TWIG_OPTIONS} [twig] - twig options
  */
 ```
-
-- Shortcodes: Uses `twig.extendFunction()` [Extending](https://twig.symfony.com/doc/2.x/advanced.html)
-- Namespaces: Uses `Twig` built-in loaders to provide [namespaces](https://twig.symfony.com/doc/3.x/api.html#built-in-loaders)
 
 You could use this as a starting point and customize to your individual needs:
 
@@ -109,14 +122,22 @@ const USER_OPTIONS = {
     },
   },
   mixManifest: "mix-manifest.json",
-  assetsPath: {
+  assets: {
+    root: "src",
     base: "assets",
     css: "css",
     js: "js",
+    images: "images",
+  },
+  images: {
+    widths: [300, 600, 1000, 1800],
+    formats: ["webp", "avif", "jpeg"],
+    additionalAttributes: "",
   },
   dir: {
-    input: "src/include/templates",
     output: "build",
+    src: "src",
+    input: "src/include/templates",
     layouts: "src/layouts",
     watch: "src/**/*.{css,js,twig}",
   },
@@ -126,7 +147,8 @@ const USER_OPTIONS = {
 ## To be done
 
 - Proper caching
-  ...
+- Make features optional
+- ...
 
 ## Acknowledgements
 
