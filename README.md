@@ -143,6 +143,37 @@ const USER_OPTIONS = {
 };
 ```
 
+## Shortcodes
+
+### `mixManifest`
+
+If you've generated a mixManifest and add the path to it to the `USER_OPTIONS` then its possible to add the non hashed files to a template e.g.:
+
+```twig
+{{ mix(/path/to/unhashed/asset.css) }} --> will result in /path/to/hashed/asset.hash-1234.css
+```
+
+Please provide a path relative so that `userOptions.assets.root + userOptions.base + providedPath` reaches the asset from your projects root.
+
+### `asset_path`
+
+This is a simple helper shortcode to make your defined asset path `userOptions.base` available in a template:
+
+```twig
+{{ asset_path() }} --> will result in userOptions.base like "assets"
+```
+
+### `image`
+
+This uses `@11ty/eleventy-img` to generate responsive images in defined formats (`userOptions.images.formats`) and sizes (`userOptions.images.widths`). You could also provide certain additionalAttributes via config for lazyloading etc.
+
+```twig
+{{ image("src", "alt") }} --> will result in a proper <picture> element with different <source> elements for each format and defined widths
+```
+
+- `src`: this has to be relative to the `userOptions.assets.images` folder
+- `alt`: mandatory! (`""` is possible)
+
 ## To be done
 
 - Proper caching
