@@ -113,7 +113,6 @@ You could use this as a starting point and customize to your individual needs:
  */
 const USER_OPTIONS = {
   twig: {
-    shortcodes: [],
     namespaces: {
       elements: "src/include/elements",
       patterns: "src/include/patterns",
@@ -130,7 +129,7 @@ const USER_OPTIONS = {
     images: "images",
   },
   images: {
-    widths: [300, 600, 1000, 1800],
+    widths: [300, 600, 900],
     formats: ["webp", "avif", "jpeg"],
     additionalAttributes: "",
   },
@@ -152,4 +151,4 @@ const USER_OPTIONS = {
 
 ## Acknowledgements
 
-This **Eleventy + Twig.js** plugin uses open source software and would not have been possible without the excellent work of the [Eslint](https://babeljs.io/team), [Eleventy](https://www.11ty.dev/docs/credits/), [Prettier](https://unifiedjs.com/community/member/), [debug](https://github.com/debug-js/debug) and [Twig.js](https://github.com/twigjs/twig.js/) teams! Thanks a lot!
+This **Eleventy + Twig.js** plugin uses open source software and would not have been possible without the excellent work of the [Eslint](https://babeljs.io/team), [Eleventy](https://www.11ty.dev/docs/credits/), [Eleventy-img](https://github.com/11ty/eleventy-img), [Prettier](https://unifiedjs.com/community/member/), [debug](https://github.com/debug-js/debug) and [Twig.js](https://github.com/twigjs/twig.js/) teams! Thanks a lot!
