@@ -168,11 +168,12 @@ This is a simple helper shortcode to make your defined asset path `userOptions.b
 This uses `@11ty/eleventy-img` to generate responsive images in defined formats (`userOptions.images.formats`) and sizes (`userOptions.images.widths`). You could also provide certain additionalAttributes via config for lazyloading etc.
 
 ```twig
-{{ image("src", "alt") }} --> will result in a proper <picture> element with different <source> elements for each format and defined widths
+{{ image("src", "alt", "classes") }} --> will result in a proper <picture> element with different <source> elements for each format and defined widths
 ```
 
 - `src`: this has to be relative to the `userOptions.assets.images` folder
 - `alt`: mandatory! (`""` is possible)
+- optional `classes`: `Array<string>`
 
 ## To be done
 
