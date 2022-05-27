@@ -23,7 +23,7 @@ This package adds a `.twig` template engine to Eleventy that lets you use the pu
 
 - **Built-in Shortcodes**: Uses [`twig.extendFunction()`](https://twig.symfony.com/doc/2.x/advanced.html) to extend Twig
 - **Twig Namespaces**: Uses `Twig` built-in loaders to provide [namespaces](https://twig.symfony.com/doc/3.x/api.html#built-in-loaders)
-- **Responsive Images**: Uses [`@11ty/eleventy-twig`](https://github.com/11ty/eleventy-img) plugin to autogenerate responsive images
+- **Responsive Images**: Uses [`@11ty/eleventy-img`](https://github.com/11ty/eleventy-img) plugin to autogenerate responsive images
 - **Hashed Assets**: If you have generated a manifest (e.g. with [`@factorial/eleventy-plugin-fstack`](https://github.com/factorial-io/eleventy-plugin-fstack)) you could let eleventy replace unhashed assets like `css/js` automatically with their hashed versions
 
 ## Getting Started
