@@ -6,7 +6,7 @@
   align="center"
   width="128"
   height="128"
-  alt="11ty Logo"
+  alt="Eleventy Logo"
   src="https://camo.githubusercontent.com/124e337fb005b0e70eb3758b431b051eaf5419b3a709062fbcce6d661a6ea116/68747470733a2f2f7777772e313174792e6465762f696d672f6c6f676f2d6769746875622e737667">+
 <img
   style="margin:2rem; width:8rem; height:8rem;"
@@ -24,7 +24,7 @@ This package adds a `.twig` template engine to Eleventy that lets you use the pu
 - **Built-in Shortcodes**: Uses [`twig.extendFunction()`](https://twig.symfony.com/doc/2.x/advanced.html) to extend Twig
 - **Twig Namespaces**: Uses `Twig` built-in loaders to provide [namespaces](https://twig.symfony.com/doc/3.x/api.html#built-in-loaders)
 - **Responsive Images**: Uses [`@11ty/eleventy-img`](https://github.com/11ty/eleventy-img) plugin to autogenerate responsive images
-- **Hashed Assets**: If you have generated a manifest (e.g. with [`@factorial/eleventy-plugin-fstack`](https://github.com/factorial-io/eleventy-plugin-fstack)) you could let eleventy replace unhashed assets like `css/js` automatically with their hashed versions
+- **Hashed Assets**: If you have generated a manifest (e.g. with [`@factorial/eleventy-plugin-fstack`](https://github.com/factorial-io/eleventy-plugin-fstack)) you could let Eleventy replace unhashed assets like `css/js` automatically with their hashed versions
 
 ## Getting Started
 
@@ -59,11 +59,11 @@ As mentioned in the `eleventyConfig.addPlugin(eleventy-plugin-twig, USER_OPTIONS
 ```js
 /**
  * @typedef {object} ELEVENTY_DIRECTORIES
- * @property {string} input - 11ty template path
- * @property {string} output - 11ty build path
- * @property {string} [includes] - 11ty includes path relativ to input
- * @property {string} [layouts] - 11ty separate layouts path relative to input
- * @property {string} [watch] - add more watchTargets to 11ty
+ * @property {string} input - Eleventy template path
+ * @property {string} output - Eleventy build path
+ * @property {string} [includes] - Eleventy includes path relativ to input
+ * @property {string} [layouts] - Eleventy separate layouts path relative to input
+ * @property {string} [watch] - add more watchTargets to Eleventy
  */
 
 /**
@@ -99,8 +99,8 @@ As mentioned in the `eleventyConfig.addPlugin(eleventy-plugin-twig, USER_OPTIONS
  * @typedef {object} USER_OPTIONS
  * @property {string} mixManifest - path to the mixManifest file relative to the build folder
  * @property {ASSETS} [assets] - where to find all the assets relative to the build folder
- * @property {IMAGES} [images] - options for 11tys image processing
- * @property {ELEVENTY_DIRECTORIES} dir - 11ty folder decisions
+ * @property {IMAGES} [images] - options for Eleventys image processing
+ * @property {ELEVENTY_DIRECTORIES} dir - Eleventy folder decisions
  * @property {TWIG_OPTIONS} [twig] - twig options
  */
 ```
@@ -147,10 +147,10 @@ const USER_OPTIONS = {
 
 ### `mixManifest`
 
-If you've generated a mixManifest and add the path to it to the `USER_OPTIONS` then its possible to add the non hashed files to a template e.g.:
+If you've generated a mixManifest and add the path to it to the `USER_OPTIONS` then it's possible to add the non hashed files to a template e.g.:
 
 ```twig
-{{ mix(/path/to/unhashed/asset.css) }} --> will result in /path/to/hashed/asset.hash-1234.css
+{{ mix("/path/to/unhashed/asset.css") }} --> will result in /path/to/hashed/asset.hash-1234.css
 ```
 
 Please provide a path relative so that `userOptions.assets.root + userOptions.base + providedPath` reaches the asset from your projects root.
