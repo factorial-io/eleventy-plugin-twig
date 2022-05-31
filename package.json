@@ -28,7 +28,6 @@
   },
   "homepage": "https://github.com/factorial-io/eleventy-plugin-twig#readme",
   "dependencies": {
-    "@11ty/eleventy-img": "^2.0.1",
     "@11ty/eleventy-utils": "^1.0.1"
   },
   "devDependencies": {
@@ -41,6 +40,7 @@
     "prettier": "^2.6.0"
   },
   "peerDependencies": {
+    "@11ty/eleventy-img": "^2.0.1",
     "twig": "^1.15.4"
   }
 }
