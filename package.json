@@ -1,0 +1,46 @@
+{
+  "name": "@factorial/eleventy-plugin-twig",
+  "description": "Twig templating engine for eleventy",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/factorial-io/eleventy-plugin-twig.git"
+  },
+  "author": "Dennis Jauernig <dennis@factorial.io>",
+  "keywords": [
+    "Twig",
+    "TwigJs",
+    "eleventy",
+    "11ty",
+    "eleventy-plugin"
+  ],
+  "bugs": {
+    "url": "https://github.com/factorial-io/eleventy-plugin-twig/issues"
+  },
+  "homepage": "https://github.com/factorial-io/eleventy-plugin-twig#readme",
+  "dependencies": {
+    "@11ty/eleventy-utils": "^1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsdoc": "^39.2.9",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.0"
+  },
+  "peerDependencies": {
+    "@11ty/eleventy-img": "^2.0.1",
+    "twig": "^1.15.4"
+  }
+}
