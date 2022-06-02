@@ -145,7 +145,7 @@ const USER_OPTIONS = {
 
 ## Shortcodes
 
-### `mixManifest`
+### `mix`
 
 If you've generated a mixManifest and add the path to it to the `USER_OPTIONS` then it's possible to add the non hashed files to a template e.g.:
 
@@ -157,10 +157,10 @@ Please provide a path relative so that `userOptions.assets.root + userOptions.ba
 
 ### `asset_path`
 
-This is a simple helper shortcode to make your defined asset path `userOptions.base` available in a template:
+This is a simple helper shortcode to make your defined asset path `userOptions.assets.base` available in a template:
 
 ```twig
-{{ asset_path() }} --> will result in userOptions.base like "assets"
+{{ asset_path() }} --> will result in /userOptions.assets.base like "/assets"
 ```
 
 ### `image`
