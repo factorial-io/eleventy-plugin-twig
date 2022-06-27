@@ -113,14 +113,14 @@ const userOptions = {
     ]
   },
   assets: {
-    root: "src",
-    base: "assets",
-    images: "images",
+    root: "src", // path to the root folder from projects root (e.g. src)
+    base: "assets", // base path for assets relative to the root folder (e.g. assets)
+    images: "images", // path to the image folder relative to the base (e.g. images)
   },
   images: {
-    widths: [300, 600, 900],
-    formats: ["webp", "avif"],
-    additionalAttributes: "" // optionally
+    widths: [300, 600, 900], // those image sizes will be autogenereated / aspect-ratio will be respected
+    formats: ["webp", "avif"], // jpeg/avif/webp/png/gif
+    additionalAttributes: "" // optionally - those attributes will be added to the image element
   }
 }
 ```
