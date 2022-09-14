@@ -97,7 +97,7 @@ As mentioned in the `eleventyConfig.addPlugin(eleventy-plugin-twig, USER_OPTIONS
 
 /**
  * @typedef {object} USER_OPTIONS
- * @property {string} mixManifest - path to the mixManifest file relative to the build folder
+ * @property {string} [mixManifest] - path to the mixManifest file relative to the build folder
  * @property {ASSETS} [assets] - where to find all the assets relative to the build folder
  * @property {IMAGES} [images] - options for Eleventys image processing
  * @property {ELEVENTY_DIRECTORIES} dir - Eleventy folder decisions
