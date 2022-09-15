@@ -1,7 +1,7 @@
 {
   "name": "@factorial/eleventy-plugin-twig",
   "description": "Twig templating engine for eleventy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "license": "MIT",
   "private": false,
