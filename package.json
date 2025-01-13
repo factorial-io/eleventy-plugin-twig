@@ -38,7 +38,7 @@
     "prettier": "^3.3.3"
   },
   "peerDependencies": {
-    "@11ty/eleventy-img": "^5.0.0",
+    "@11ty/eleventy-img": ">5.0.0",
     "twig": "^1.17.1"
   }
 }
